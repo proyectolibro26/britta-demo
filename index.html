@@ -289,6 +289,70 @@ footer li a:hover{color:var(--ink)}
 .cur.on{transform:scale(1)}
 
 
+
+/* ================= GIFT CARD ================= */
+.gift{padding:8rem 0;background:linear-gradient(180deg,var(--bg),#e6e1d9);overflow:hidden}
+.gg{display:grid;grid-template-columns:1.1fr .9fr;gap:4.5rem;align-items:center}
+.gstage{perspective:1400px;display:grid;place-items:center;padding:2rem 0 3rem;position:relative}
+.gstage::after{content:"";position:absolute;bottom:0;left:15%;right:15%;height:40px;background:radial-gradient(closest-side,rgba(22,21,20,.28),transparent);filter:blur(6px)}
+.gcard{position:relative;width:min(100%,560px);aspect-ratio:1.586;transform-style:preserve-3d;transition:transform .9s var(--ease);cursor:pointer}
+.gcard.flip .ginner{transform:rotateY(180deg)}
+.ginner{position:absolute;inset:0;transform-style:preserve-3d;transition:transform 1s var(--ease)}
+.gface{position:absolute;inset:0;border-radius:24px;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;padding:2rem 2.2rem;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 40px 80px -30px rgba(22,21,20,.55),inset 0 0 0 1px rgba(255,255,255,.08);transition:background .6s,color .6s}
+.gback{transform:rotateY(180deg)}
+.gface::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at var(--mx,30%) var(--my,20%),rgba(255,255,255,.32),transparent 45%);mix-blend-mode:soft-light;transition:opacity .3s}
+.gface .bgimg{position:absolute;inset:0;background-size:cover;background-position:center 30%;opacity:0;transition:opacity .6s}
+.gface .bgimg::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(15,14,13,.82),rgba(15,14,13,.25))}
+.gface>*{position:relative;z-index:1}
+.gtop{display:flex;justify-content:space-between;align-items:flex-start}
+.glogo{font-family:"Instrument Serif",serif;font-size:clamp(2.6rem,5.4vw,3.6rem);line-height:.9}
+.glogo small{display:block;font-family:Yellowtail,cursive;font-size:.5em;margin-top:.15em;color:var(--gacc);transform:rotate(-4deg);transform-origin:left}
+.gchip{width:46px;height:36px;border-radius:7px;background:linear-gradient(135deg,#e7cf98,#b8954e 55%,#f0dca9);position:relative;opacity:.9}
+.gchip::before{content:"";position:absolute;inset:6px 8px;border:1px solid rgba(80,60,20,.4);border-radius:3px}
+.gbot{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem}
+.gto{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;opacity:.75}
+.gto b{display:block;font-family:"Instrument Serif",serif;font-weight:400;letter-spacing:0;text-transform:none;font-size:1.6rem;opacity:1;line-height:1.1;max-width:14ch;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gamt{font-family:"Instrument Serif",serif;font-size:clamp(2.4rem,5vw,3.4rem);line-height:1;text-align:right}
+.gamt small{display:block;font-family:"Inter Tight",sans-serif;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;opacity:.7;margin-top:.3rem}
+.gmsg{font-family:"Instrument Serif",serif;font-style:italic;font-size:clamp(1.3rem,2.6vw,1.8rem);line-height:1.2;max-width:24ch}
+.gmeta{display:flex;justify-content:space-between;align-items:flex-end;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+.gcode{font-family:"Instrument Serif",serif;font-size:1.1rem;letter-spacing:.12em;text-transform:none}
+.gqr{width:64px;height:64px;border-radius:6px;background:
+  conic-gradient(from 90deg at 30% 30%,currentColor 25%,transparent 0) 0 0/16px 16px,
+  conic-gradient(from 0deg at 70% 70%,currentColor 25%,transparent 0) 8px 8px/16px 16px;opacity:.85}
+.gcard[data-s="negro"] .gface{background:#0f0e0d;color:#efede9;--gacc:#ff7a5c}
+.gcard[data-s="kiel"] .gface{background:repeating-linear-gradient(0deg,rgba(0,0,0,.12) 0 2px,transparent 2px 22px),repeating-linear-gradient(90deg,rgba(0,0,0,.12) 0 2px,transparent 2px 22px),linear-gradient(135deg,#b8270f,#6e140a);color:#fbeee9;--gacc:#ffd2c4}
+.gcard[data-s="arena"] .gface{background:linear-gradient(135deg,#efe6d6,#d9c9ae);color:#161514;--gacc:#a3200f}
+.gcard[data-s="foto"] .gface{background:#0f0e0d;color:#fff;--gacc:#ff9a80}
+.gcard[data-s="foto"] .gfront .bgimg{opacity:1}
+.gflip{position:absolute;right:6%;bottom:-.4rem;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;border-bottom:1px solid currentColor;z-index:3}
+.gform{display:grid;gap:1.4rem}
+.gform h2{margin:.8rem 0 .4rem}
+.gform .lead{color:var(--soft);max-width:44ch}
+.glabel{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--soft);font-weight:500;margin-bottom:.6rem;display:flex;justify-content:space-between}
+.amts{display:flex;flex-wrap:wrap;gap:.45rem}
+.amts button{padding:.6rem 1rem;border:1px solid var(--line);border-radius:999px;font-size:.86rem;transition:.25s;background:rgba(255,255,255,.4)}
+.amts button.on,.amts button:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.amts input{width:130px;padding:.6rem 1rem;border:1px dashed var(--soft);border-radius:999px;font:inherit;font-size:.86rem;background:none;outline:none}
+.amts input:focus{border-style:solid;border-color:var(--ink)}
+.styles{display:flex;gap:.7rem}
+.styles button{width:64px;height:42px;border-radius:9px;border:2px solid transparent;outline:1px solid var(--line);transition:.25s;position:relative}
+.styles button.on{border-color:var(--ink);transform:translateY(-3px)}
+.styles button span{position:absolute;top:calc(100% + 4px);left:50%;transform:translateX(-50%);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);white-space:nowrap}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+.gin{width:100%;font:inherit;font-size:.95rem;padding:.85rem 1rem;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.65);outline:none}
+.gin:focus{border-color:var(--ink)}
+textarea.gin{resize:none;min-height:80px}
+.seg{display:flex;background:rgba(255,255,255,.55);border:1px solid var(--line);border-radius:999px;padding:4px;gap:4px}
+.seg button{flex:1;padding:.6rem .8rem;border-radius:999px;font-size:.84rem;transition:.25s}
+.seg button.on{background:var(--ink);color:var(--bg)}
+.gsum{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:1.4rem}
+.gsum .serif{font-size:2.4rem;line-height:1}
+.gsum small{display:block;color:var(--red);font-size:.8rem}
+.gperks{display:flex;gap:1.2rem;flex-wrap:wrap;font-size:.8rem;color:var(--soft)}
+.gperks span::before{content:"✦ ";color:var(--red)}
+.gmini{width:70px;height:44px;border-radius:7px;display:grid;place-items:center;font-family:"Instrument Serif",serif;font-size:.9rem;align-self:center}
+
 /* ================= PROPUESTA ================= */
 .prop{background:#121110;color:#efede9;padding:0 0 6rem;position:relative}
 .prop .divider{background:repeating-linear-gradient(-45deg,#a3200f 0 14px,#121110 14px 28px);height:10px}
@@ -303,7 +367,7 @@ footer li a:hover{color:var(--ink)}
 .pblock h3{font-family:"Instrument Serif",serif;font-weight:400;font-size:clamp(2.2rem,4.4vw,3.8rem);line-height:1}
 .pblock h3 i{color:#ff7a5c}
 .pblock .ph p{color:#9d968d;max-width:40ch}
-.seen{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(239,237,233,.12);border:1px solid rgba(239,237,233,.12);border-radius:16px;overflow:hidden}
+.seen{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(239,237,233,.12);border:1px solid rgba(239,237,233,.12);border-radius:16px;overflow:hidden}
 .seen div{background:#121110;padding:1.8rem}
 .seen b{display:block;font-weight:500;margin-bottom:.4rem}
 .seen span{color:#9d968d;font-size:.92rem}
@@ -360,6 +424,11 @@ a.demo:hover{background:var(--red)}
   .jstep h4{margin-top:.6rem}
   .steps4{grid-template-columns:1fr 1fr}
   .pin .pc{flex-basis:62vw}
+  .gg{grid-template-columns:1fr;gap:2rem}
+  .gface{padding:1.3rem 1.4rem;border-radius:16px}
+  .gchip{width:36px;height:28px}
+  .gto b{font-size:1.2rem}
+  .gqr{width:44px;height:44px}
 }
 
 @media (max-width:1000px){
@@ -424,7 +493,7 @@ a.demo:hover{background:var(--red)}
 
 <header id="hdr">
   <nav class="wrap">
-    <div class="nl"><a href="#newin">New in</a><a href="#look">Shop the look</a><a href="#categorias">Categorías</a><a href="#historia">Britta Girls</a></div>
+    <div class="nl"><a href="#newin">New in</a><a href="#look">Shop the look</a><a href="#categorias">Categorías</a><a href="#giftcard">Gift card</a><a href="#historia">Britta Girls</a></div>
     <button class="burger" aria-label="Menú" onclick="document.getElementById('categorias').scrollIntoView()"><svg class="icon" viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
     <a href="#" class="logo" aria-label="Britta inicio">Britta.</a>
     <div class="nr">
@@ -494,6 +563,55 @@ a.demo:hover{background:var(--red)}
       <div class="chips" id="chips"></div>
     </div>
     <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+
+<!-- GIFT CARD -->
+<section class="gift" id="giftcard">
+  <div class="wrap gg">
+    <div class="gstage rv" id="gstage">
+      <div class="gcard" id="gcard" data-s="negro" onclick="flipCard()">
+        <div class="ginner">
+          <div class="gface gfront">
+            <div class="bgimg" style="background-image:url(https://acdn-us.mitiendanube.com/stores/002/883/655/themes/rio/2-slide-1793032486947-3874898319-614751efd24d4de07662c400d8ce41161793032488-1920-1920.webp)"></div>
+            <div class="gtop"><div class="glogo">Britta.<small>gift card</small></div><div class="gchip"></div></div>
+            <div class="gbot"><div class="gto">Para<b id="gTo">alguien especial</b></div><div class="gamt"><span id="gAmt">$50.000</span><small>Válida 6 meses</small></div></div>
+          </div>
+          <div class="gface gback">
+            <div class="bgimg"></div>
+            <div class="gmeta"><span>De: <b id="gFrom" style="font-weight:500">vos</b></span><span>#BrittaGirls</span></div>
+            <div class="gmsg" id="gMsg">“Para que elijas tu próximo look favorito.”</div>
+            <div class="gmeta"><div><div style="margin-bottom:.3rem">Código</div><span class="gcode" id="gCode">BRT-GIFT-····</span></div><div class="gqr"></div></div>
+          </div>
+        </div>
+      </div>
+      <button class="gflip" onclick="flipCard()">Dar vuelta ↻</button>
+    </div>
+
+    <div class="gform rv">
+      <div>
+        <span class="cap">Gift card</span>
+        <h2 class="h2"><span class="split-line" data-split><span>Regalá un <i>look</i></span></span></h2>
+        <p class="lead">Elegí el monto y el diseño, escribí tu dedicatoria y decinos cuándo la enviamos. Le llega por WhatsApp o mail, lista para usar en la web o en el local.</p>
+      </div>
+      <div><div class="glabel"><span>Monto</span></div>
+        <div class="amts" id="amts"></div></div>
+      <div><div class="glabel"><span>Diseño</span></div>
+        <div class="styles" id="gstyles"></div></div>
+      <div style="margin-top:.6rem"><div class="glabel"><span>Dedicatoria</span><span id="gcount">0/120</span></div>
+        <div class="g2" style="margin-bottom:.7rem"><input class="gin" id="iTo" maxlength="22" placeholder="Para (su nombre)"><input class="gin" id="iFrom" maxlength="22" placeholder="De (tu nombre)"></div>
+        <textarea class="gin" id="iMsg" maxlength="120" placeholder="Escribí un mensaje para la tarjeta"></textarea></div>
+      <div><div class="glabel"><span>¿Cómo y cuándo la enviamos?</span></div>
+        <div class="seg" id="segVia" style="margin-bottom:.7rem"><button class="on" data-v="WhatsApp">Por WhatsApp</button><button data-v="Email">Por mail</button></div>
+        <div class="g2"><input class="gin" id="iDest" inputmode="tel" placeholder="Su celular"><div class="seg" id="segWhen"><button class="on" data-v="hoy">Hoy</button><button data-v="fecha">Programar</button></div></div>
+        <input class="gin" id="iDate" type="date" style="margin-top:.7rem;display:none"></div>
+      <div class="gsum">
+        <div><span class="serif" id="gTot">$50.000</span><small id="gCash"></small></div>
+        <button class="btn btn-ink" onclick="addGift()">Agregar a la bolsa</button>
+      </div>
+      <div class="gperks"><span>Se envía sola en la fecha elegida</span><span>Válida 6 meses</span><span>Web y local</span></div>
+    </div>
   </div>
 </section>
 
@@ -577,6 +695,8 @@ a.demo:hover{background:var(--red)}
         <div><b>Categorías con foto que sigue al cursor</b><span>Navegación editorial, como las marcas grandes.</span></div>
         <div><b>Bolsa inteligente</b><span>Barra de envío gratis, 20% OFF por transferencia y 6 cuotas calculadas solas.</span></div>
         <div><b>Pedido directo a WhatsApp</b><span>Cada compra llega con número de orden, talles, total y datos de entrega.</span></div>
+        <div><b>Gift card personalizada</b><span>Tarjeta 3D con cuatro diseños, monto en vivo y dedicatoria en el dorso.</span></div>
+        <div><b>Envío programado</b><span>La gift card se manda sola por WhatsApp o mail el día del cumpleaños.</span></div>
       </div>
     </div>
 
@@ -604,6 +724,8 @@ a.demo:hover{background:var(--red)}
         <div class="mod rv"><span class="n">08</span><div><h4>Panel de ventas</h4><p>Un tablero con ventas del día, prendas más vistas, más vendidas y bolsas abandonadas, sin abrir planillas.</p><span class="res">Decisiones con datos</span></div></div>
         <div class="mod rv"><span class="n">09</span><div><h4>Cobros sin fricción</h4><p>Link de pago de Mercado Pago con el total exacto y posnet en el local con débito, crédito y QR.</p><span class="res">Cobrar antes, cobrar más fácil</span></div></div>
         <div class="mod rv"><span class="n">10</span><div><h4>Turnos para probador y cambios</h4><p>Reserva online para cambios o para probarse con asesoramiento, con recordatorio automático el día anterior.</p><span class="res">Local más ordenado</span></div></div>
+        <div class="mod rv"><span class="n">11</span><div><h4>Gift cards automáticas</h4><p>Cada gift card se genera con su código, se envía sola en la fecha elegida y el saldo queda registrado para usar en la web o en el local.</p><span class="res">Regalos sin trabajo manual</span></div></div>
+        <div class="mod rv"><span class="n">12</span><div><h4>Cumpleaños de clientas</h4><p>Un saludo automático con un beneficio el día del cumpleaños de cada #BrittaGirl, y un recordatorio a quien quiera regalarle.</p><span class="res">Una venta extra por clienta al año</span></div></div>
       </div>
     </div>
 
@@ -853,15 +975,16 @@ function modalAdd(){add(mk,ms);$('#modal').classList.remove('on');$('#veil').cla
 /* ================= Bolsa ================= */
 let cart=[];try{cart=JSON.parse(localStorage.getItem('britta_bolsa')||'[]')}catch(e){}
 let pay='transf';
-function addRaw(k,s){const f=cart.find(x=>x.k===k&&x.s===s);f?f.q++:cart.push({k,s,q:1})}
+function addRaw(k,s){const f=cart.find(x=>!x.g&&x.k===k&&x.s===s);f?f.q++:cart.push({k,s,q:1})}
 function add(k,s){addRaw(k,s||P[k].sizes[1]);save();toast(`${P[k].n} · talle ${s||P[k].sizes[1]} agregado`)}
 function save(){try{localStorage.setItem('britta_bolsa',JSON.stringify(cart))}catch(e){}render();const c=$('#count');c.classList.remove('bump');void c.offsetWidth;c.classList.add('bump')}
-function totals(){const sub=cart.reduce((s,x)=>s+P[x.k].p*x.q,0),d=PAGOS.find(p=>p.id===pay).d;return{sub,dis:sub*d,tot:sub*(1-d)}}
+const iPrice=x=>x.g?x.g.amt:P[x.k].p;
+function totals(){const sub=cart.reduce((s,x)=>s+iPrice(x)*x.q,0),d=PAGOS.find(p=>p.id===pay).d;return{sub,dis:sub*d,tot:sub*(1-d)}}
 function render(){
   $('#count').textContent=cart.reduce((s,x)=>s+x.q,0);
   const t=totals(),left=FREE-t.sub;
   $('#free').innerHTML=(left>0?`Te faltan <b>${money(left)}</b> para el envío gratis`:'¡Tenés <b>envío gratis</b>!')+`<i><b style="width:${Math.min(100,t.sub/FREE*100)}%"></b></i>`;
-  $('#items').innerHTML=cart.length?cart.map((x,j)=>{const p=P[x.k];return `<div class="item"><img src="${im(p.i[0],'480-0')}" alt=""><div><h5>${p.n}</h5><small>Talle ${x.s}</small><div class="qty"><button onclick="qty(${j},-1)" aria-label="Restar">−</button>${x.q}<button onclick="qty(${j},1)" aria-label="Sumar">+</button></div></div><div class="r">${money(p.p*x.q)}<br><button class="rm" onclick="cart.splice(${j},1);save()">Quitar</button></div></div>`}).join(''):`<div class="empty"><span class="serif">Tu bolsa está vacía</span>Elegí tu talle en cualquier prenda para empezar.</div>`;
+  $('#items').innerHTML=cart.length?cart.map((x,j)=>{if(x.g){const g=x.g,sy=GSTY.find(s=>s.id===g.sty);return `<div class="item"><div class="gmini" style="background:${sy.bg};color:${g.sty==='arena'?'#161514':'#fff'}">Britta.</div><div><h5>Gift Card ${money(g.amt)}</h5><small>Para ${g.to} · por ${g.via} · ${g.when}</small><div class="qty"><button onclick="qty(${j},-1)" aria-label="Restar">−</button>${x.q}<button onclick="qty(${j},1)" aria-label="Sumar">+</button></div></div><div class="r">${money(g.amt*x.q)}<br><button class="rm" onclick="cart.splice(${j},1);save()">Quitar</button></div></div>`}const p=P[x.k];return `<div class="item"><img src="${im(p.i[0],'480-0')}" alt=""><div><h5>${p.n}</h5><small>Talle ${x.s}</small><div class="qty"><button onclick="qty(${j},-1)" aria-label="Restar">−</button>${x.q}<button onclick="qty(${j},1)" aria-label="Sumar">+</button></div></div><div class="r">${money(p.p*x.q)}<br><button class="rm" onclick="cart.splice(${j},1);save()">Quitar</button></div></div>`}).join(''):`<div class="empty"><span class="serif">Tu bolsa está vacía</span>Elegí tu talle en cualquier prenda para empezar.</div>`;
   $('#pays').innerHTML=PAGOS.map(p=>`<label class="opt"><input type="radio" name="pay" value="${p.id}" ${p.id===pay?'checked':''} onchange="pay='${p.id}';render()"><span>${p.t}<small>${p.s}</small></span></label>`).join('');
   $('#sub').textContent=money(t.sub);$('#dis').textContent=t.dis?'−'+money(t.dis):'—';$('#tot').textContent=money(t.tot);
   $('#cuotas').textContent=pay==='cuotas'?`6 cuotas sin interés de ${money(t.tot/6)}`:(pay==='transf'?'Precio con 20% OFF por transferencia o efectivo':'');
@@ -878,7 +1001,7 @@ function placeOrder(e){
   e.preventDefault();const f=new FormData(e.target),t=totals(),pg=PAGOS.find(p=>p.id===pay);
   const code='BRT-'+Date.now().toString(36).slice(-5).toUpperCase();
   const envio=f.get('ship').startsWith('Retiro')?'':(t.sub>=FREE?' (gratis)':' (costo a confirmar)');
-  const lines=cart.map(x=>`• ${x.q}x ${P[x.k].n} — talle ${x.s} — ${money(P[x.k].p*x.q)}`).join('\n');
+  const lines=cart.map(x=>x.g?`• ${x.q}x 🎁 Gift Card ${money(x.g.amt)} (diseño ${x.g.sty}) — para ${x.g.to}, de ${x.g.from}\n   Enviar por ${x.g.via}${x.g.dest?' a '+x.g.dest:''} · ${x.g.when}${x.g.msg?`\n   Mensaje: “${x.g.msg}”`:''}`:`• ${x.q}x ${P[x.k].n} — talle ${x.s} — ${money(P[x.k].p*x.q)}`).join('\n');
   const msg=`🛍️ *Nuevo pedido web ${code}*\n\n${lines}\n\nSubtotal: ${money(t.sub)}\n${t.dis?`Descuento 20% (transferencia/efectivo): −${money(t.dis)}\n`:''}*Total: ${money(t.tot)}*${pay==='cuotas'?` (6 cuotas de ${money(t.tot/6)})`:''}\n\n👤 ${f.get('name')}\n📱 ${f.get('phone')}\n🚚 ${f.get('ship')}${envio}${f.get('addr')?`\n📍 ${f.get('addr')}`:''}\n💳 ${pg.t}${f.get('note')?`\n📝 ${f.get('note')}`:''}`;
   const url=`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
   $('#code').textContent=code;$('#walink').href=url;
@@ -886,6 +1009,41 @@ function placeOrder(e){
   cart=[];save();e.target.reset();shipChange();window.open(url,'_blank');
 }
 let tt;function toast(m){$('#tmsg').textContent=m;$('#toast').classList.add('on');clearTimeout(tt);tt=setTimeout(()=>$('#toast').classList.remove('on'),2800)}
+
+
+/* ================= Gift card ================= */
+const GAMTS=[10000,20000,30000,40000,50000,60000,100000];
+const GSTY=[{id:'negro',n:'Negro',bg:'#0f0e0d'},{id:'kiel',n:'Kiel',bg:'linear-gradient(135deg,#b8270f,#6e140a)'},{id:'arena',n:'Arena',bg:'linear-gradient(135deg,#efe6d6,#d9c9ae)'},{id:'foto',n:'Campaña',bg:'url(https://acdn-us.mitiendanube.com/stores/002/883/655/themes/rio/2-slide-1793032486947-3874898319-614751efd24d4de07662c400d8ce41161793032488-1920-1920.webp) center 30%/cover'}];
+const G={amt:50000,sty:'negro',via:'WhatsApp',when:'hoy',shown:50000};
+function gRender(){
+  $('#amts').innerHTML=GAMTS.map(a=>`<button class="${a===G.amt?'on':''}" onclick="gAmt(${a})">${money(a)}</button>`).join('')+`<input id="gOther" inputmode="numeric" placeholder="Otro monto" value="${GAMTS.includes(G.amt)?'':G.amt}">`;
+  $('#gOther').addEventListener('change',e=>{const v=Math.max(10000,Math.min(500000,parseInt(e.target.value.replace(/\D/g,''))||10000));gAmt(v)});
+  $('#gstyles').innerHTML=GSTY.map(x=>`<button class="${x.id===G.sty?'on':''}" style="background:${x.bg}" onclick="G.sty='${x.id}';$('#gcard').dataset.s='${x.id}';gRender()" aria-label="Diseño ${x.n}"><span>${x.n}</span></button>`).join('');
+  $('#gTot').textContent=money(G.amt);$('#gCash').textContent=`${money(G.amt*.8)} con transferencia · 6 cuotas de ${money(G.amt/6)}`;
+}
+function gAmt(a){G.amt=a;gRender();const from=G.shown,t0=performance.now();(function st(t){const k=Math.min(1,(t-t0)/600),e=1-Math.pow(1-k,3);G.shown=from+(a-from)*e;$('#gAmt').textContent=money(Math.round(G.shown/100)*100);if(k<1)requestAnimationFrame(st);else G.shown=a})(t0)}
+function flipCard(){$('#gcard').classList.toggle('flip')}
+['iTo','iFrom','iMsg'].forEach(id=>$('#'+id).addEventListener('input',()=>{
+  $('#gTo').textContent=$('#iTo').value||'alguien especial';$('#gFrom').textContent=$('#iFrom').value||'vos';
+  const m=$('#iMsg').value;$('#gMsg').textContent=m?`“${m}”`:'“Para que elijas tu próximo look favorito.”';$('#gcount').textContent=m.length+'/120';
+  if(id==='iMsg'&&!$('#gcard').classList.contains('flip'))flipCard();
+  if(id!=='iMsg'&&$('#gcard').classList.contains('flip'))flipCard();
+  const seed=($('#iTo').value+$('#iFrom').value).split('').reduce((a,c)=>a+c.charCodeAt(0),0);$('#gCode').textContent='BRT-GIFT-'+String(1000+seed%9000);
+}));
+function segs(id,key,cb){$$('#'+id+' button').forEach(b=>b.addEventListener('click',()=>{$$('#'+id+' button').forEach(x=>x.classList.toggle('on',x===b));G[key]=b.dataset.v;cb&&cb()}))}
+segs('segVia','via',()=>{const w=G.via==='WhatsApp';$('#iDest').placeholder=w?'Su celular':'Su mail';$('#iDest').inputMode=w?'tel':'email'});
+segs('segWhen','when',()=>{$('#iDate').style.display=G.when==='fecha'?'block':'none'});
+(function(){const d=new Date();d.setDate(d.getDate()+1);$('#iDate').min=d.toISOString().slice(0,10)})();
+const gst=$('#gstage'),gc=$('#gcard');
+gst.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse')return;const r=gc.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;gc.style.transform=`rotateY(${(x-.5)*18}deg) rotateX(${(.5-y)*14}deg)`;$$('.gface').forEach(f=>{f.style.setProperty('--mx',x*100+'%');f.style.setProperty('--my',y*100+'%')})});
+gst.addEventListener('pointerleave',()=>{gc.style.transform=''});
+function addGift(){
+  if(G.when==='fecha'&&!$('#iDate').value){$('#iDate').focus();toast('Elegí la fecha de envío');return}
+  const fecha=G.when==='fecha'?new Date($('#iDate').value+'T12:00').toLocaleDateString('es-AR',{day:'numeric',month:'long'}):'hoy';
+  cart.push({g:{amt:G.amt,sty:G.sty,to:$('#iTo').value||'—',from:$('#iFrom').value||'—',msg:$('#iMsg').value,via:G.via,dest:$('#iDest').value,when:fecha},q:1});
+  save();toast(`Gift card de ${money(G.amt)} agregada`);
+}
+gRender();
 
 /* ================= Reveal + scroll ================= */
 let io;function observe(){io=io||new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});$$('.rv:not(.in),[data-split]:not(.in)').forEach(el=>io.observe(el))}
