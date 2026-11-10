@@ -51,7 +51,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 header{position:sticky;top:0;z-index:50;transition:background .4s,backdrop-filter .4s}
 header.solid{background:rgba(239,237,233,.82);backdrop-filter:blur(12px)}
 nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:76px}
-.nl{display:flex;gap:2rem}
+.nl{display:flex;gap:clamp(1rem,2vw,2rem)}
+.nl a{white-space:nowrap}
+@media (max-width:1320px){.nl a{letter-spacing:.08em;font-size:.68rem}}
 .nl a{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;position:relative}
 .nl a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease)}
 .nl a:hover::after{transform:scaleX(1);transform-origin:left}
@@ -291,9 +293,9 @@ footer li a:hover{color:var(--ink)}
 
 
 /* ================= GIFT CARD ================= */
-.gift{padding:8rem 0;background:linear-gradient(180deg,var(--bg),#e6e1d9);overflow:hidden}
-.gg{display:grid;grid-template-columns:1.1fr .9fr;gap:4.5rem;align-items:center}
-.gstage{perspective:1400px;display:grid;place-items:center;padding:2rem 0 3rem;position:relative}
+.gift{padding:8rem 0;background:linear-gradient(180deg,var(--bg),#e6e1d9);overflow:clip}
+.gg{display:grid;grid-template-columns:1.1fr .9fr;gap:4.5rem;align-items:start}
+.gstage{perspective:1400px;display:grid;place-items:center;padding:.6rem 0 3rem;position:sticky;top:100px}
 .gstage::after{content:"";position:absolute;bottom:0;left:15%;right:15%;height:40px;background:radial-gradient(closest-side,rgba(22,21,20,.28),transparent);filter:blur(6px)}
 .gcard{position:relative;width:min(100%,560px);aspect-ratio:1.586;transform-style:preserve-3d;transition:transform .9s var(--ease);cursor:pointer}
 .gcard.flip .ginner{transform:rotateY(180deg)}
@@ -304,6 +306,10 @@ footer li a:hover{color:var(--ink)}
 .gface .bgimg{position:absolute;inset:0;background-size:cover;background-position:center 12%;opacity:0;transition:opacity .6s}
 .gface .bgimg::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(15,14,13,.82),rgba(15,14,13,.25))}
 .gface>*{position:relative;z-index:1}
+.gface>.gcrown{position:absolute;z-index:0;left:50%;top:44%;width:42%;transform:translate(-30%,-50%) rotate(-10deg);opacity:var(--crop,.2);filter:blur(2.2px) drop-shadow(0 0 22px rgba(255,255,255,.25));pointer-events:none;transition:opacity .6s}
+.gback>.gcrown{left:auto;right:-4%;width:40%;transform:translateY(-50%) rotate(12deg);opacity:calc(var(--crop,.2)*.7)}
+.gcard[data-s="arena"]{--crop:.38}
+.gcard[data-s="foto"]{--crop:.3}
 .gtop{display:flex;justify-content:space-between;align-items:flex-start}
 .glogo{font-family:"Instrument Serif",serif;font-size:clamp(2.6rem,5.4vw,3.6rem);line-height:.9}
 .glogo small{display:block;font-family:Yellowtail,cursive;font-size:.5em;margin-top:.15em;color:var(--gacc);transform:rotate(-4deg);transform-origin:left}
@@ -322,7 +328,7 @@ footer li a:hover{color:var(--ink)}
   conic-gradient(from 0deg at 70% 70%,currentColor 25%,transparent 0) 8px 8px/16px 16px;opacity:.85}
 .gcard[data-s="negro"] .gface{background:#0f0e0d;color:#efede9;--gacc:#ff7a5c}
 .gcard[data-s="kiel"] .gface{background:repeating-linear-gradient(0deg,rgba(0,0,0,.12) 0 2px,transparent 2px 22px),repeating-linear-gradient(90deg,rgba(0,0,0,.12) 0 2px,transparent 2px 22px),linear-gradient(135deg,#b8270f,#6e140a);color:#fbeee9;--gacc:#ffd2c4}
-.gcard[data-s="arena"] .gface{background:linear-gradient(135deg,#efe6d6,#d9c9ae);color:#161514;--gacc:#a3200f}
+.gcard[data-s="arena"] .gface{background:linear-gradient(135deg,#efe6d6,#d9c9ae);color:#161514;--gacc:#a3200f;--crownfill:url(#silverArena)}
 .gcard[data-s="foto"] .gface{background:#0f0e0d;color:#fff;--gacc:#ff9a80}
 .gcard[data-s="foto"] .gfront .bgimg{opacity:1}
 .gflip{position:absolute;right:6%;bottom:-.4rem;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;border-bottom:1px solid currentColor;z-index:3}
@@ -427,6 +433,7 @@ a.demo:hover{background:var(--red)}
   .gg{grid-template-columns:1fr;gap:2rem}
   .gface{padding:1.3rem 1.4rem;border-radius:16px}
   .gchip{width:36px;height:28px}
+  .gstage{position:relative;top:0}
   .gto b{font-size:1.2rem}
   .gqr{width:44px;height:44px}
 }
@@ -568,6 +575,17 @@ a.demo:hover{background:var(--red)}
 
 
 <!-- GIFT CARD -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <linearGradient id="silver" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".35" stop-color="#c9ccd1"/><stop offset=".55" stop-color="#8e9298"/><stop offset=".75" stop-color="#e6e8eb"/><stop offset="1" stop-color="#a7abb1"/></linearGradient>
+  <linearGradient id="silverArena" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b9bcc1"/><stop offset=".5" stop-color="#6f737a"/><stop offset="1" stop-color="#9da1a7"/></linearGradient>
+  <symbol id="crown" viewBox="0 0 200 150">
+    <path d="M30 112 22 44l26 38 12-54 22 44 18-62 18 62 22-44 12 54 26-38-8 68Z" fill="var(--crownfill,url(#silver))" stroke="rgba(255,255,255,.7)" stroke-width="1.5" stroke-linejoin="round"/>
+    <rect x="24" y="108" width="152" height="26" rx="5" fill="var(--crownfill,url(#silver))" stroke="rgba(255,255,255,.7)" stroke-width="1.5"/>
+    <g fill="var(--crownfill,url(#silver))" stroke="rgba(255,255,255,.8)" stroke-width="1.2"><circle cx="22" cy="44" r="7"/><circle cx="60" cy="28" r="7"/><circle cx="100" cy="10" r="8"/><circle cx="140" cy="28" r="7"/><circle cx="178" cy="44" r="7"/></g>
+    <g fill="none" stroke="rgba(255,255,255,.85)" stroke-width="1.6"><circle cx="58" cy="121" r="5"/><circle cx="142" cy="121" r="5"/><path d="M100 113l7 8-7 8-7-8Z"/><path d="M100 72l6 8-6 9-6-9Z"/></g>
+    <path d="M30 112 22 44l26 38" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2"/>
+  </symbol></defs></svg>
+
 <section class="gift" id="giftcard">
   <div class="wrap gg">
     <div class="gstage rv" id="gstage">
@@ -575,11 +593,13 @@ a.demo:hover{background:var(--red)}
         <div class="ginner">
           <div class="gface gfront">
             <div class="bgimg" style="background-image:url(https://acdn-us.mitiendanube.com/stores/002/883/655/themes/rio/2-slide-1793032486947-3874898319-614751efd24d4de07662c400d8ce41161793032488-1920-1920.webp)"></div>
+            <svg class="gcrown" viewBox="0 0 200 150" aria-hidden="true"><use href="#crown"/></svg>
             <div class="gtop"><div class="glogo">Britta.<small>gift card</small></div><div class="gchip"></div></div>
             <div class="gbot"><div class="gto">Para<b id="gTo">alguien especial</b></div><div class="gamt"><span id="gAmt">$50.000</span><small>Válida 6 meses</small></div></div>
           </div>
           <div class="gface gback">
             <div class="bgimg"></div>
+            <svg class="gcrown" viewBox="0 0 200 150" aria-hidden="true"><use href="#crown"/></svg>
             <div class="gmeta"><span>De: <b id="gFrom" style="font-weight:500">vos</b></span><span>#BrittaGirls</span></div>
             <div class="gmsg" id="gMsg">“Para que elijas tu próximo look favorito.”</div>
             <div class="gmeta"><div><div style="margin-bottom:.3rem">Código</div><span class="gcode" id="gCode">BRT-GIFT-····</span></div><div class="gqr"></div></div>
