@@ -102,8 +102,10 @@ section{position:relative}
 
 /* ---------- new in (pinned horizontal) ---------- */
 .newin{background:var(--paper)}
-.pin{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
-.pin .sh{width:min(1360px,92%);margin:0 auto 2.4rem}
+.pin{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;padding-top:76px}
+.pin .sh{width:min(1360px,92%);margin:0 auto 1.6rem}
+.pin .h2{font-size:clamp(2.6rem,min(6vw,9vh),5.6rem)}
+.pin .pc{flex-basis:min(22vw,320px,calc((100vh - 400px)/1.5))}
 .track{display:flex;gap:1.4rem;padding:0 4vw;will-change:transform}
 .pc{flex:0 0 clamp(240px,22vw,320px);position:relative}
 .pc .ph{position:relative;aspect-ratio:2/3;overflow:hidden;border-radius:6px;background:var(--wall);cursor:pointer}
@@ -120,13 +122,13 @@ section{position:relative}
 .pc h4{font-weight:500;font-size:.95rem;margin-top:.8rem}
 .pc .pr{font-size:.86rem;color:var(--soft)}
 .pc .pr b{color:var(--red);font-weight:500}
-.progress{width:min(1360px,92%);margin:2.4rem auto 0;height:1px;background:var(--line);position:relative}
+.progress{width:min(1360px,92%);margin:1.6rem auto 0;height:1px;background:var(--line);position:relative}
 .progress i{position:absolute;left:0;top:0;bottom:0;background:var(--ink);width:0}
 
 /* ---------- shop the look ---------- */
 .stl{padding:8rem 0}
 .stl-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:4rem;align-items:center}
-.look-ph{position:relative;aspect-ratio:2/3;border-radius:8px;overflow:hidden;background:var(--wall);max-height:84vh;margin:0 auto;width:100%}
+.look-ph{position:relative;aspect-ratio:3/4;border-radius:8px;overflow:hidden;background:var(--wall);margin:0 auto;width:min(100%,calc(82vh*.75))}
 .look-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .6s}
 .hs{position:absolute;z-index:3;width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;background:var(--bg);display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.25);transition:transform .3s var(--ease)}
 .hs::before{content:"";position:absolute;inset:-8px;border-radius:50%;border:1px solid rgba(255,255,255,.9);animation:ring 2.2s infinite}
@@ -285,6 +287,80 @@ footer li a:hover{color:var(--ink)}
 .demo{position:fixed;left:12px;bottom:12px;z-index:60;background:var(--ink);color:var(--bg);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;padding:.45rem .7rem;border-radius:4px;pointer-events:none}
 .cur{position:fixed;left:0;top:0;z-index:70;width:84px;height:84px;margin:-42px 0 0 -42px;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;pointer-events:none;transform:scale(0);transition:transform .35s var(--ease)}
 .cur.on{transform:scale(1)}
+
+
+/* ================= PROPUESTA ================= */
+.prop{background:#121110;color:#efede9;padding:0 0 6rem;position:relative}
+.prop .divider{background:repeating-linear-gradient(-45deg,#a3200f 0 14px,#121110 14px 28px);height:10px}
+.prop .note{text-align:center;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:#8d867d;padding:1.4rem 0 0}
+.prop .phero{padding:6rem 0 5rem;display:grid;grid-template-columns:1.3fr 1fr;gap:3rem;align-items:end;border-bottom:1px solid rgba(239,237,233,.12)}
+.prop .phero h2{font-family:"Instrument Serif",serif;font-weight:400;font-size:clamp(3rem,6.2vw,6.2rem);line-height:.88;letter-spacing:-.02em}
+.prop .phero h2 i{color:#ff7a5c}
+.prop .phero p{color:#b6afa6;font-size:1.05rem;max-width:44ch}
+.prop .phero .script{font-size:2.4rem;color:#ff7a5c;display:block;transform:rotate(-5deg);margin-bottom:.6rem}
+.pblock{padding:5rem 0;border-bottom:1px solid rgba(239,237,233,.12)}
+.pblock .ph{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-bottom:2.6rem}
+.pblock h3{font-family:"Instrument Serif",serif;font-weight:400;font-size:clamp(2.2rem,4.4vw,3.8rem);line-height:1}
+.pblock h3 i{color:#ff7a5c}
+.pblock .ph p{color:#9d968d;max-width:40ch}
+.seen{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(239,237,233,.12);border:1px solid rgba(239,237,233,.12);border-radius:16px;overflow:hidden}
+.seen div{background:#121110;padding:1.8rem}
+.seen b{display:block;font-weight:500;margin-bottom:.4rem}
+.seen span{color:#9d968d;font-size:.92rem}
+.journey{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
+.journey::before{content:"";position:absolute;left:3%;right:3%;top:27px;height:1px;background:linear-gradient(90deg,#a3200f,#ff7a5c)}
+.jstep{position:relative;padding-right:1.4rem}
+.jstep .dot{width:54px;height:54px;border-radius:50%;background:#121110;border:1px solid #ff7a5c;display:grid;place-items:center;font-family:"Instrument Serif",serif;font-size:1.4rem;color:#ff7a5c;position:relative;z-index:1}
+.jstep h4{font-family:"Instrument Serif",serif;font-weight:400;font-size:1.8rem;margin:1.2rem 0 .3rem}
+.jstep p{color:#9d968d;font-size:.9rem}
+.jstep em{display:block;font-style:normal;margin-top:.8rem;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#efede9}
+.mods{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.mod{border:1px solid rgba(239,237,233,.14);border-radius:16px;padding:1.8rem;display:grid;grid-template-columns:3.2rem 1fr;gap:1.2rem;transition:border-color .3s,background .3s}
+.mod:hover{border-color:#ff7a5c;background:rgba(255,122,92,.04)}
+.mod .n{font-family:"Instrument Serif",serif;font-size:2.4rem;line-height:1;color:#ff7a5c}
+.mod h4{font-weight:500;font-size:1.08rem;margin-bottom:.35rem}
+.mod p{color:#9d968d;font-size:.92rem}
+.mod .res{display:inline-block;margin-top:.8rem;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(239,237,233,.25);border-radius:999px;padding:.35rem .7rem;color:#efede9}
+.tn{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.tn ul{list-style:none;display:grid;gap:.9rem}
+.tn li{display:grid;grid-template-columns:28px 1fr;gap:.8rem;color:#c9c2b9}
+.tn li::before{content:"✓";width:24px;height:24px;border-radius:50%;background:#a3200f;color:#fff;display:grid;place-items:center;font-size:.75rem}
+.wire{border:1px dashed rgba(239,237,233,.3);border-radius:16px;padding:2rem;display:grid;gap:.8rem;font-size:.92rem}
+.wire div{display:flex;align-items:center;gap:.8rem;justify-content:space-between;border:1px solid rgba(239,237,233,.14);border-radius:10px;padding:.9rem 1rem}
+.wire b{font-weight:500}.wire span{color:#9d968d;font-size:.82rem}
+.wire .arrow{border:0;padding:0;justify-content:center;color:#ff7a5c}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.plan{border:1px solid rgba(239,237,233,.14);border-radius:18px;padding:2.2rem;display:flex;flex-direction:column;gap:1rem}
+.plan.star{background:#efede9;color:#161514;border-color:#efede9;position:relative}
+.plan.star .badge{position:absolute;top:-12px;left:2.2rem;background:#a3200f;color:#fff;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;padding:.35rem .7rem;border-radius:999px}
+.plan h4{font-family:"Instrument Serif",serif;font-weight:400;font-size:2.2rem;line-height:1}
+.plan .pr{font-size:1.3rem}
+.plan .pr small{display:block;font-size:.78rem;opacity:.7}
+.plan ul{list-style:none;display:grid;gap:.55rem;font-size:.9rem;opacity:.85}
+.plan li::before{content:"— ";color:#ff7a5c}
+.plan.star li::before{color:#a3200f}
+.steps4{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.s4{border-top:2px solid #ff7a5c;padding-top:1.2rem}
+.s4 b{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:#ff7a5c}
+.s4 h4{font-family:"Instrument Serif",serif;font-weight:400;font-size:1.7rem;margin:.4rem 0}
+.s4 p{color:#9d968d;font-size:.9rem}
+.pcta{text-align:center;padding:6rem 0 2rem}
+.pcta h3{font-family:"Instrument Serif",serif;font-weight:400;font-size:clamp(2.6rem,6vw,5.2rem);line-height:1;margin-bottom:1.6rem}
+.pcta h3 i{color:#ff7a5c}
+.pcta .btn{background:#efede9;color:#161514}.pcta .btn:hover{background:#ff7a5c;color:#161514}
+a.demo{pointer-events:auto}
+a.demo:hover{background:var(--red)}
+@media (max-width:1000px){
+  .prop .phero,.tn{grid-template-columns:1fr}
+  .seen,.plans,.mods{grid-template-columns:1fr}
+  .journey{grid-template-columns:1fr;gap:1.6rem}
+  .journey::before{left:27px;right:auto;top:0;bottom:0;width:1px;height:auto;background:linear-gradient(180deg,#a3200f,#ff7a5c)}
+  .jstep{display:grid;grid-template-columns:54px 1fr;gap:0 1.2rem;padding:0}
+  .jstep .dot{grid-row:span 3}
+  .jstep h4{margin-top:.6rem}
+  .steps4{grid-template-columns:1fr 1fr}
+  .pin .pc{flex-basis:62vw}
+}
 
 @media (max-width:1000px){
   .nl{display:none}
@@ -478,6 +554,106 @@ footer li a:hover{color:var(--ink)}
   </div>
 </footer>
 
+
+<!-- ======================= PROPUESTA (no es parte de la web de Britta) ======================= -->
+<section class="prop" id="propuesta">
+  <div class="divider"></div>
+  <p class="note">Hasta acá la demo · Desde acá, la propuesta</p>
+  <div class="wrap">
+    <div class="phero">
+      <div>
+        <span class="script rv">Para Sol y el equipo de Britta</span>
+        <h2 class="rv">Una web que <i>vende</i> mientras ustedes atienden el local.</h2>
+      </div>
+      <p class="rv">Britta ya vende muy bien con Tiendanube, Instagram y el local de Moreno 865. Proponemos dos cosas: una web con identidad propia, como la que acaban de recorrer, y un sistema de automatizaciones para que las consultas, los pedidos y los avisos se resuelvan solos.</p>
+    </div>
+
+    <div class="pblock">
+      <div class="ph"><h3 class="rv">Lo que acabás de <i>ver</i></h3><p class="rv">Todo esto funciona hoy en la demo, con sus fotos y sus precios reales.</p></div>
+      <div class="seen rv">
+        <div><b>Carrusel 3D de la temporada</b><span>Las prendas de The Kiel season giran con perspectiva y se pueden arrastrar.</span></div>
+        <div><b>New in con scroll horizontal</b><span>Los ingresos pasan de costado mientras bajás, con talle rápido en cada prenda.</span></div>
+        <div><b>Shop the look interactivo</b><span>Puntos sobre la foto que muestran cada prenda y suman el look completo.</span></div>
+        <div><b>Categorías con foto que sigue al cursor</b><span>Navegación editorial, como las marcas grandes.</span></div>
+        <div><b>Bolsa inteligente</b><span>Barra de envío gratis, 20% OFF por transferencia y 6 cuotas calculadas solas.</span></div>
+        <div><b>Pedido directo a WhatsApp</b><span>Cada compra llega con número de orden, talles, total y datos de entrega.</span></div>
+      </div>
+    </div>
+
+    <div class="pblock">
+      <div class="ph"><h3 class="rv">El recorrido de una clienta, <i>en automático</i></h3><p class="rv">Desde que descubre una prenda hasta que vuelve a comprar, cada paso tiene una respuesta sin que nadie la escriba.</p></div>
+      <div class="journey">
+        <div class="jstep rv"><div class="dot">1</div><h4>Descubre</h4><p>Ve un posteo o un reel y entra a la web desde el link de la bio.</p><em>Posteos programados</em></div>
+        <div class="jstep rv"><div class="dot">2</div><h4>Pregunta</h4><p>"¿Tenés talle 38?", "¿cuánto sale el envío?" Recibe la respuesta al instante, a cualquier hora.</p><em>Respuestas 24/7</em></div>
+        <div class="jstep rv"><div class="dot">3</div><h4>Compra</h4><p>Paga con transferencia, cuotas o Mercado Pago. Si deja la bolsa a medias, le llega un recordatorio.</p><em>Bolsa abandonada</em></div>
+        <div class="jstep rv"><div class="dot">4</div><h4>Recibe</h4><p>Le llega por WhatsApp la confirmación, el aviso de despacho con seguimiento o el "ya podés retirar".</p><em>Avisos de pedido</em></div>
+        <div class="jstep rv"><div class="dot">5</div><h4>Vuelve</h4><p>Se le pide una reseña con foto y se le avisa de los ingresos nuevos en su talle.</p><em>Recompra</em></div>
+      </div>
+    </div>
+
+    <div class="pblock">
+      <div class="ph"><h3 class="rv">Todo lo que podemos <i>automatizar</i></h3><p class="rv">Se arma por módulos: empiezan con lo que más tiempo les ahorra y suman el resto cuando quieran.</p></div>
+      <div class="mods">
+        <div class="mod rv"><span class="n">01</span><div><h4>Respuestas automáticas en Instagram y WhatsApp</h4><p>Talles, envíos, cuotas, horarios, dirección y cambios se responden solos, con el tono de Britta. Lo que no sabe, lo deriva al equipo.</p><span class="res">Menos DMs repetidos</span></div></div>
+        <div class="mod rv"><span class="n">02</span><div><h4>Avisos de pedido por WhatsApp</h4><p>Confirmación de compra, "tu pedido salió" con número de seguimiento y "ya podés retirar en Moreno 865".</p><span class="res">Menos "¿y mi pedido?"</span></div></div>
+        <div class="mod rv"><span class="n">03</span><div><h4>Recupero de bolsas abandonadas</h4><p>Si una clienta deja prendas en la bolsa, recibe un mensaje con su selección a las pocas horas, y otro al día siguiente.</p><span class="res">Ventas que hoy se pierden</span></div></div>
+        <div class="mod rv"><span class="n">04</span><div><h4>"Avisame cuando vuelva"</h4><p>Lista de espera por talle agotado. Cuando entra stock, se avisa sola a cada clienta anotada.</p><span class="res">Cada reposición, vendida</span></div></div>
+        <div class="mod rv"><span class="n">05</span><div><h4>Newsletter y lanzamientos</h4><p>Cada ingreso o promo llega por mail y WhatsApp a las #BrittaGirls, separadas por lo que compraron antes.</p><span class="res">Más recompra</span></div></div>
+        <div class="mod rv"><span class="n">06</span><div><h4>Reseñas con foto</h4><p>Unos días después de la entrega, se le pide a la clienta su opinión y una foto con la prenda, para mostrar en la web.</p><span class="res">Más confianza</span></div></div>
+        <div class="mod rv"><span class="n">07</span><div><h4>Contenido programado</h4><p>Calendario mensual de posteos, reels e historias para Instagram y TikTok, programados de una vez.</p><span class="res">Redes activas sin esfuerzo</span></div></div>
+        <div class="mod rv"><span class="n">08</span><div><h4>Panel de ventas</h4><p>Un tablero con ventas del día, prendas más vistas, más vendidas y bolsas abandonadas, sin abrir planillas.</p><span class="res">Decisiones con datos</span></div></div>
+        <div class="mod rv"><span class="n">09</span><div><h4>Cobros sin fricción</h4><p>Link de pago de Mercado Pago con el total exacto y posnet en el local con débito, crédito y QR.</p><span class="res">Cobrar antes, cobrar más fácil</span></div></div>
+        <div class="mod rv"><span class="n">10</span><div><h4>Turnos para probador y cambios</h4><p>Reserva online para cambios o para probarse con asesoramiento, con recordatorio automático el día anterior.</p><span class="res">Local más ordenado</span></div></div>
+      </div>
+    </div>
+
+    <div class="pblock">
+      <div class="tn">
+        <div>
+          <h3 class="rv" style="margin-bottom:1.4rem">Sin cambiar cómo <i>trabajan hoy</i></h3>
+          <ul>
+            <li class="rv">El stock, los precios y los pedidos siguen en Tiendanube, como ahora.</li>
+            <li class="rv">La web nueva toma las prendas desde Tiendanube: nada se carga dos veces.</li>
+            <li class="rv">Las automatizaciones usan su WhatsApp, su Instagram y su mail.</li>
+            <li class="rv">El dominio brittaonline.com.ar pasa a mostrar la web nueva.</li>
+          </ul>
+        </div>
+        <div class="wire rv">
+          <div><b>Tiendanube</b><span>stock · precios · pedidos</span></div>
+          <div class="arrow">↓</div>
+          <div><b>Web de Britta</b><span>la experiencia que vieron</span></div>
+          <div class="arrow">↓</div>
+          <div><b>Automatizaciones</b><span>WhatsApp · Instagram · mail · panel</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pblock">
+      <div class="ph"><h3 class="rv">Tres formas de <i>arrancar</i></h3><p class="rv">Precios a definir según el alcance final.</p></div>
+      <div class="plans">
+        <div class="plan rv"><h4>Web</h4><div class="pr">$ a definir<small>pago único + mantenimiento mensual</small></div><ul><li>La web de esta demo, completa</li><li>Conectada a Tiendanube</li><li>Pedidos y consultas a WhatsApp</li><li>Ajustes de diseño incluidos</li></ul></div>
+        <div class="plan star rv"><span class="badge">Recomendado</span><h4>Web + Ventas</h4><div class="pr">$ a definir<small>pago único + mensual</small></div><ul><li>Todo lo de Web</li><li>Respuestas automáticas 24/7</li><li>Avisos de pedido por WhatsApp</li><li>Recupero de bolsas abandonadas</li><li>"Avisame cuando vuelva"</li></ul></div>
+        <div class="plan rv"><h4>Todo en automático</h4><div class="pr">$ a definir<small>pago único + mensual</small></div><ul><li>Todo lo de Web + Ventas</li><li>Newsletter y lanzamientos</li><li>Reseñas con foto</li><li>Contenido programado</li><li>Panel de ventas y turnos</li></ul></div>
+      </div>
+    </div>
+
+    <div class="pblock">
+      <div class="ph"><h3 class="rv">De la demo a la web real, en <i>4 semanas</i></h3></div>
+      <div class="steps4">
+        <div class="s4 rv"><b>Semana 1</b><h4>Ajustes</h4><p>Revisamos la demo juntas y definimos colores, secciones y fotos de campaña.</p></div>
+        <div class="s4 rv"><b>Semana 2</b><h4>Conexión</h4><p>Conectamos la web con Tiendanube y cargamos todo el catálogo.</p></div>
+        <div class="s4 rv"><b>Semana 3</b><h4>Automatizaciones</h4><p>Configuramos respuestas, avisos y recordatorios con el tono de Britta.</p></div>
+        <div class="s4 rv"><b>Semana 4</b><h4>Lanzamiento</h4><p>Pruebas, publicación en brittaonline.com.ar y capacitación al equipo.</p></div>
+      </div>
+    </div>
+
+    <div class="pcta">
+      <h3 class="rv">¿Lo hacemos <i>realidad</i>?</h3>
+      <a class="btn rv" id="ctaProp" href="https://wa.me/?text=Hola!%20Vi%20la%20demo%20de%20la%20web%20de%20Britta%20y%20quiero%20avanzar." target="_blank" rel="noopener">Quiero avanzar</a>
+    </div>
+  </div>
+</section>
+
 <!-- bolsa -->
 <div class="veil" id="veil" onclick="closeAll()"></div>
 <aside class="drawer" id="drawer" aria-label="Bolsa">
@@ -524,7 +700,7 @@ footer li a:hover{color:var(--ink)}
 <div class="toast" id="toast"><span id="tmsg"></span><button onclick="openCart()">Ver bolsa</button></div>
 <div class="cur" id="cur">Arrastrá</div>
 <a class="wa" href="https://wa.me/5493412287555?text=Hola%20Britta!" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.1.3.6 1.1 1.4 1.8 1 .9 1.8 1.1 2 1.3.3.1.4.1.6-.1l.8-1c.2-.2.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.2.1.8-.2 1.5Z"/></svg></a>
-<div class="demo">Demo · Propuesta de diseño</div>
+<a class="demo" href="#propuesta">Demo · Ver propuesta ↓</a>
 
 <script>
 /* ================= Datos (fotos y precios de brittaonline.com.ar) ================= */
@@ -558,9 +734,9 @@ const P=[
 P.forEach((p,k)=>{p.k=k;p.sizes=/Pantal|Bermuda|Short|Mini|Falda/.test(p.n)?['36','38','40','42']:['S','M','L']});
 const HERO=[4,0,15,13,19,17,5,7,12];
 const LOOKS=[
- {n:'Look 01',img:0,spots:[[0,22,36],[3,52,21],[1,46,50]]},
- {n:'Look 02',img:15,spots:[[15,50,33],[16,47,70]]},
- {n:'Look 03',img:7,spots:[[7,30,38],[8,50,28]]}
+ {n:'Look 01',img:0,spots:[[0,23,32],[3,52,30],[1,54,51]]},
+ {n:'Look 02',img:15,spots:[[15,46,54],[16,45,86]]},
+ {n:'Look 03',img:7,spots:[[7,34,54],[8,49,50]]}
 ];
 const CATS=[
  {t:'Partes de arriba',img:6},{t:'Partes de abajo',img:14},{t:'Blazers y abrigos',img:7},{t:'Shorts, faldas y bermudas',img:10}
